@@ -194,6 +194,14 @@ static CGFloat kTextViewToSuperviewHeightDelta;
     }
 }
 
+@synthesize buttonAlwaysEnabled = _buttonAlwaysEnabled;
+- (void)setButtonAllwaysEnabled:(BOOL)buttonAlwaysEnabled {
+    if (buttonAlwaysEnabled != _buttonAlwaysEnabled) {
+        _buttonAlwaysEnabled = buttonAlwaysEnabled;
+        [self updateButtonEnabled];
+    }
+}
+
 @synthesize maxCharCount = _maxCharCount;
 - (void)setMaxCharCount:(NSUInteger)count {
     if (_maxCharCount != count) {
@@ -630,7 +638,7 @@ static CGFloat kTextViewToSuperviewHeightDelta;
 }
 
 - (void)updateButtonEnabled {
-    BOOL enabled = [self isEnabled] && [[[self textView] text] length] > 0;
+    BOOL enabled = [self buttonAlwaysEnabled] || [self isEnabled] && [[[self textView] text] length] > 0;
     [[self button] setEnabled:enabled];
 }
 

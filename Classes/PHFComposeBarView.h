@@ -46,6 +46,9 @@ extern NSString *const PHFComposeBarViewFrameEndUserInfoKey;          // NSValue
 // disabled.
 @property (assign, nonatomic, getter=isEnabled) BOOL enabled;
 
+// When set to true, the button is always enabled.
+@property (assign, nonatomic) BOOL buttonAlwaysEnabled;
+
 // Default is 0. When not 0, a counter is shown in the format
 // count/maxCharCount. It is placed behind the main button but with a fixed top
 // margin, thus only visible if there are at least two lines of text.
