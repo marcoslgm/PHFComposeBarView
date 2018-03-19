@@ -638,7 +638,7 @@ static CGFloat kTextViewToSuperviewHeightDelta;
 }
 
 - (void)updateButtonEnabled {
-    BOOL enabled = [self buttonAlwaysEnabled] || ([self isEnabled] && [[[self textView] text] length] > 0);
+    BOOL enabled = [self buttonAlwaysEnabled] || ([self isEnabled] && [[[self textView] text] length] > 0);
     [[self button] setEnabled:enabled];
 }
 
